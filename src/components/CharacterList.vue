@@ -19,12 +19,12 @@
 </script>
 
 <template>
-    <ul class="list-unstyled character_list">
-        <li v-for="character in store.charachterList">
-            {{character.name}}
-        </li>
-    </ul>
-    <SingleCharacter></SingleCharacter>
+    <div class="row character_list p-3 g-2">
+        <div class="col col-lg-3 single_col"
+            v-for="(character, index) in store.charachterList" :key="index">
+            <SingleCharacter :character="character"></SingleCharacter>
+        </div>
+    </div>
 </template>
 
 <style scoped lang="scss">
@@ -32,5 +32,8 @@
     @use '../styles/partials/variables' as *;
     .character_list{
         color: $secondary_color;
+        .single_col{
+            height: 300px;
+        }
     }
 </style>
