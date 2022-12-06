@@ -1,2 +1,8 @@
-@use './partials/variables';
+@use './partials/variables' as *;
 @import 'bootstrap/scss/bootstrap';
+
+body{
+    height: 100vh;
+    background-color: $primary_color;
+    color: $accent_color_light;
+}
