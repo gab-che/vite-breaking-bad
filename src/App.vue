@@ -1,10 +1,9 @@
 <script>
   import TheHeader from './components/TheHeader.vue';
-  import TheSelect from './components/TheSelect.vue';
   import TheMain from './components/TheMain.vue';
 
   export default{
-    components: { TheHeader, TheSelect, TheMain },
+    components: { TheHeader, TheMain },
 
     data(){
 
@@ -21,7 +20,6 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 m-auto">
-        <TheSelect></TheSelect>
         <TheMain></TheMain>
       </div>
     </div>

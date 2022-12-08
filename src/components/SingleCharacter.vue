@@ -42,8 +42,9 @@
         <div class="card-body">
             <h5 class="card-title">{{character.name}}</h5>
             <div class="card-text">
-                <p>Anno di nascita: {{character.birth_year}}</p>
                 <p>Genere: {{character.gender}}</p>
+                <p>Capelli: {{character.hair_color}}</p>
+                <p>Occhi: {{character.eye_color}}</p>
             </div>
             <a :href="character.url" class="btn btn-outline-light" target="_blank">More info</a>
         </div>

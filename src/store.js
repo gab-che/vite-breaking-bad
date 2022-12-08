@@ -5,6 +5,7 @@ export const store = reactive({
     charachterList: [],
     loading: false,
     currentPage: 1,
+    searchName: '',
 });
 
 export function fetchData() {
@@ -13,6 +14,7 @@ export function fetchData() {
     axios.get('https://swapi.dev/api/people/', {
         params: {
             page: store.currentPage,
+            search: store.searchName,
         }
     })
         .then((resp) => {
@@ -21,7 +23,7 @@ export function fetchData() {
         })
         .catch((error) => {
             //inserire codice in caso di errore
-            console.log(error);
+            //console.log(error);
             store.loading = false;
         })
 }

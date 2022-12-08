@@ -1,18 +1,29 @@
 <script>
+    import { store, fetchData } from '../store';
     import CharacterList from './CharacterList.vue';
+    import SearchBar from './SearchBar.vue';
 
     export default{
-    components: { CharacterList },
+    components: { CharacterList, SearchBar },
 
     data() {
-        return {};
+        return {
+            store,
+        };
     },
-    methods: {},
+    methods: {
+        onSearch(characterName){
+            this.store.searchName = characterName;
+            fetchData();
+            console.log(characterName);
+        }
+    },
 }
 </script>
 
 <template>
     <main>
+        <SearchBar @search="onSearch"></SearchBar>
         <CharacterList></CharacterList>
     </main>
 </template>
